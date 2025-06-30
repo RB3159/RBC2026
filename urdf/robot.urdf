@@ -19,12 +19,12 @@
       </geometry>
     </collision>
     <inertial>
-      <mass value="5.0"/>
+      <mass value="10.0"/>
       <origin xyz="0 0 0.15" rpy="0 0 0"/>
       <inertia
-        ixx="0.1" ixy="0.0" ixz="0.0"
-        iyy="0.2" iyz="0.0"
-        izz="0.3"/>
+        ixx="1" ixy="0.0" ixz="0.0"
+        iyy="4" iyz="0.0"
+        izz="3"/>
     </inertial>
   </link>
 
@@ -44,6 +44,14 @@
       <geometry>
         <cylinder length="0.2" radius="0.4"/>
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>         <!-- 정지 마찰 계수 -->
+            <mu2>1.0</mu2>       <!-- 운동 마찰 계수 -->
+          </ode>
+        </friction>
+      </surface>
     </collision>
     <inertial>
       <mass value="1.0"/>
@@ -71,6 +79,14 @@
       <geometry>
         <cylinder length="0.2" radius="0.4"/>
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>5.0</mu>         <!-- 정지 마찰 계수 -->
+            <mu2>1.0</mu2>       <!-- 운동 마찰 계수 -->
+          </ode>
+        </friction>
+      </surface>
     </collision>
     <inertial>
       <mass value="1.0"/>
@@ -100,6 +116,7 @@
     <child link="left_wheel_link"/>
     <origin xyz="0 -0.35 0.2" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
+    <dynamics damping="5.0" friction="0.0"/>
   </joint>
 
   <joint name="base_to_right_wheel" type="continuous">
@@ -107,6 +124,7 @@
     <child link="right_wheel_link"/>
     <origin xyz="0 0.35 0.2" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
+    <dynamics damping="5.0" friction="0.0"/>
   </joint>
 
   <joint name="camera_joint" type="fixed">
@@ -139,6 +157,36 @@
       <frame_name>camera</frame_name>
     </plugin>
     </sensor>
+  </gazebo>
+  
+    <!-- GAZEBO DIFF DRIVE PLUGIN -->
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+      <!-- Wheels -->
+      <left_joint>base_to_left_wheel</left_joint>
+      <right_joint>base_to_right_wheel</right_joint>
+
+      <!-- Kinematics -->
+      <wheel_separation>0.7</wheel_separation> <!-- 바퀴 사이의 거리 (y축 기준) -->
+      <wheel_diameter>0.8</wheel_diameter>   <!-- 바퀴의 지름 -->
+
+      <!-- Limits -->
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <!-- Output -->
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odometry_tf>true</publish_odometry_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <publish_odom>true</publish_odom>
+
+      <!-- Topic Names -->
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+      
+    </plugin>
   </gazebo>
 </robot>
 

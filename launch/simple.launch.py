@@ -13,7 +13,7 @@ def generate_launch_description():
             os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
         ),
         launch_arguments={
-            'world': os.path.join(pkg_share, 'worlds', 'empty.world'),
+            'world': os.path.join(pkg_share, 'worlds', 'simple.world'),
             'gui': 'true',
             'paused': 'false',
             'use_sim_time': 'true',
@@ -42,8 +42,8 @@ def generate_launch_description():
                    '-x', '0', '-y', '0', '-z', '0.3'],
         output='screen'
     )
-
-    # 컨트롤러 스포너가 필요 없으면 주석처리하거나 제거하세요
+    
+    # 컨트롤러 스포너가 필요 없으면 주석처리
     # controller_spawner = Node(
     #     package='controller_manager',
     #     executable='spawner',

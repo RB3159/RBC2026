@@ -109,7 +109,21 @@
       </material>
     </visual>
   </link>
+  <gazebo reference="left_wheel_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
 
+  <gazebo reference="right_wheel_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Black</material>
+  </gazebo>
   <!-- joints -->
   <joint name="base_to_left_wheel" type="continuous">
     <parent link="base_link"/>
@@ -133,13 +147,13 @@
     <origin xyz="0.55 0 0.2" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
   </joint>
-  
- <!--_DEPTH CAMERA -->  
+
+  <!--_DEPTH CAMERA-->  
   <gazebo reference="camera">
-    <sensor name="depth_camera1" type="depth">
-      <update_rate>30</update_rate>
+    <sensor name="depth_camera" type="depth">
+      <updateRate>30</updateRate>
       <camera>
-        <horizontal_fov>1.047</horizontal_fov>
+        <horizontalFov>1.047</horizontalFov>
         <image>
           <width>800</width>
           <height>800</height>
@@ -147,18 +161,47 @@
         </image>
         <clip>
           <near>0.1</near>
-          <far>100</far>
+          <far>10</far>
         </clip>
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-      <camera_name>camera</camera_name>
-      <image_topic_name>image_raw</image_topic_name>
-      <camera_info_topic_name>camera_info</camera_info_topic_name>
-      <frame_name>camera</frame_name>
-    </plugin>
+        <baseline>0.2</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1.0</updateRate>
+        <cameraName>camera</cameraName>
+
+        <!-- Color image -->
+        <imageTopicName>/camera/color/image_raw</imageTopicName>
+        <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+
+        <!-- Depth image -->
+        <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+        <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
+
+        <!-- Point cloud -->
+        <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+
+        <!-- Frame -->
+        <frameName>camera</frameName>
+
+        <!-- Optional calibration/distortion -->
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <pointCloudCutoffMax>10.0</pointCloudCutoffMax>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+        <cxPrime>0</cxPrime>
+        <cx>0</cx>
+        <cy>0</cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
     </sensor>
   </gazebo>
-  
+
+
     <!-- GAZEBO DIFF DRIVE PLUGIN -->
   <gazebo>
     <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">

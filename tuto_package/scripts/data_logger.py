@@ -22,7 +22,7 @@ class DataLogger(Node):
         self.csv_writer = csv.writer(self.log_file)
         self.csv_writer.writerow(['Time', 'Position_X', 'Position_Y', 'Linear_Velocity', 'Angular_Velocity'])
 
-        # 구독자 설정
+        # sub 설정
         self.create_subscription(Image, '/depth_camera/image_raw', self.image_callback, 10)
         self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
 

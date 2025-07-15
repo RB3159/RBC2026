@@ -7,8 +7,8 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     # 패키지 경로
     pkg_path = get_package_share_directory('tuto_package')
-    urdf_file = os.path.join(pkg_path, 'urdf', 'tuto_robot.urdf')
-    world_file = os.path.join(pkg_path, 'worlds', 'tuto.world')
+    urdf_file = os.path.join(pkg_path, 'urdf', 'tuto_half_home.urdf')
+    world_file = os.path.join(pkg_path, 'worlds', 'home.world')
 
     # URDF 내용 불러오기
     with open(urdf_file, 'r') as infp:
@@ -39,9 +39,9 @@ def generate_launch_description():
             executable='spawn_entity.py',
             name='spawn_urdf',
             arguments=[
-                '-entity', 'my_robot',
+                '-entity', 'tuto',
                 '-file', urdf_file,
-                '-x', '0.0', '-y', '0.0', '-z', '0.3'
+                '-x', '6.0', '-y', '4.5', '-z', '0.3'
             ],
             output='screen'
         ),
@@ -54,6 +54,13 @@ def generate_launch_description():
         # 5. diff_drive_controller 실행
         ExecuteProcess(
             cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'diff_drive_controller'],
+            output='screen'
+        ),
+        # 추가: odom→base_link tf 브로드캐스터 노드
+        Node(
+            package='tuto_package',  # 여러분 패키지 이름!
+            executable='odom_tf_broadcaster',  # 빌드 시 등록한 실행 파일/스크립트 이름
+            name='odom_tf_broadcaster',
             output='screen'
         ),
     ])

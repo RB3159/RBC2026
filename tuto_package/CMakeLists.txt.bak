@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(my_robot_package)
+project(tuto_package)
 
 # 기본 설정
 find_package(ament_cmake REQUIRED)

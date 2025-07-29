@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="empty_world">
+
+    <!-- 기본 설정 -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- 정육면체 (Box) 오브젝트 -->
+    <model name="obstacle_box">
+      <pose>-5 0 0.5 0 0 0</pose> <!-- x=-5m, y=0, z=0.5m (높이/2 만큼 띄움) -->
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size> <!-- 1m x 1m x 1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.8 1</ambient>
+            <diffuse>0.2 0.2 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

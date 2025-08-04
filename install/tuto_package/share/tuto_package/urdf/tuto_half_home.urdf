@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<robot name="tuto_half_size"> <!-- 이름 변경 추천 -->
+
+  <!-- ================================= LINKS ================================= -->
+
+  <!-- Base Link (Chassis) -->
+  <link name="link_0">
+    <inertial>
+      <mass value="0.25"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.75 0.5 0.6"/> 
+      </geometry>
+      <material name="grey"><color rgba="0.7 0.7 0.7 1"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.75 0.5 0.6"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Left Wheel Link -->
+  <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.125"/> <!-- 원본값: 1 -->
+      <inertia ixx="0.009115" ixy="0" ixz="0" iyy="0.009115" iyz="0" izz="0.007813"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <!-- length="0.25", radius="0.3" / 2 -->
+        <cylinder length="0.125" radius="0.15"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <!-- length="0.25", radius="0.3" / 2 -->
+        <cylinder length="0.125" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Right Wheel Link -->
+  <link name="link_1_clone">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.125"/> <!-- 원본값: 1 -->
+      <inertia ixx="0.009115" ixy="0" ixz="0" iyy="0.009115" iyz="0" izz="0.007813"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <!-- length="0.25", radius="0.3" / 2 -->
+        <cylinder length="0.125" radius="0.15"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <!-- length="0.25", radius="0.3" / 2 -->
+        <cylinder length="0.125" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Caster Wheel Link -->
+  <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.125"/> <!-- 원본값: 1 -->
+      <inertia ixx="0.00625" ixy="0" ixz="0" iyy="0.00625" iyz="0" izz="0.00625"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <!-- radius="0.2" / 2 -->
+        <sphere radius="0.1"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <!-- radius="0.2" / 2 -->
+        <sphere radius="0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- LIDAR LINK -->
+  <link name="velodyne_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.06"/> 
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+
+  <!-- Depth Camera -->
+  <link name="depth_camera_link">
+    <visual>
+      <geometry>
+        <!-- size="0.1 0.1 0.1" / 2 -->
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <!-- size="0.1 0.1 0.1" / 2 -->
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!-- ================================= JOINTS ================================= -->
+
+  <!-- Left Wheel Joint -->
+  <joint name="link_0_JOINT_0" type="continuous">
+    <parent link="link_0"/>
+    <child link="link_1"/>
+    <!-- xyz="0.45 -0.625029 -0.1" / 2 -->
+    <origin rpy="1.5707 0 0" xyz="0.225 -0.3125145 -0.3"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Right Wheel Joint -->
+  <joint name="link_0_JOINT_1" type="continuous">
+    <parent link="link_0"/>
+    <child link="link_1_clone"/>
+    <!-- xyz="0.45 0.625029 -0.1" / 2 -->
+    <origin rpy="1.5707 0 0" xyz="0.225 0.3125145 -0.3"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Caster Wheel Joint -->
+  <joint name="link_0_JOINT_2" type="fixed">
+    <parent link="link_0"/>
+    <child link="link_2"/>
+    <!-- xyz="-0.55 0 -0.2" / 2 -->
+    <origin rpy="0 0 0" xyz="-0.275 0 -0.35"/>
+  </joint>
+
+  <!-- LIDAR JOINT -->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="link_0"/>
+    <child link="velodyne_link"/>
+    <!-- xyz="0 0 0.274738" / 2 -->
+    <origin xyz="-0.25 0 0.337369" rpy="0 0 3.1416"/>
+  </joint>
+
+  <!-- Depth Camera Joint -->
+  <joint name="depth_camera_joint" type="fixed">
+    <parent link="link_0"/>
+    <child link="depth_camera_link"/>
+    <!-- xyz="0.0 0.0 0.35" / 2 -->
+    <origin xyz="-0.25 0.0 0.375" rpy="0 0 3.1416"/>
+  </joint>
+
+  <!-- =============================== GAZEBO PLUGINS =============================== -->
+
+  <gazebo reference="depth_camera_link">
+    <sensor name="depth_camera" type="depth">
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>320</width>
+          <height>240</height>
+        </image>
+        <clip>
+          <near>0.05</near>   <!-- 원본값: 0.1 -->
+          <far>50</far>     <!-- 원본값: 100 -->
+        </clip>
+      </camera>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      
+      <plugin name="depth_camera_controller" filename="libgazebo_ros_camera.so">
+        <camera_name>depth_camera</camera_name>
+        <image_topic_name>image_raw</image_topic_name>
+        <camera_info_topic_name>camera_info</camera_info_topic_name>
+        <frame_name>depth_camera_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <left_joint>link_0_JOINT_0</left_joint>
+      <right_joint>link_0_JOINT_1</right_joint>
+
+      <!-- 기하학적 정보도 절반으로 수정 -->
+      <wheel_separation>0.5</wheel_separation> <!-- 원본값: 1.0 -->
+      <wheel_diameter>0.3</wheel_diameter>     <!-- 원본값: 0.6 -->
+
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>5.0</max_wheel_acceleration>
+      <robot_base_frame>link_0</robot_base_frame>
+      <odometry_frame>odom</odometry_frame>
+      <publish_odom>true</publish_odom>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <publish_odometry_tf>true</publish_odometry_tf>
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="velodyne_link">
+    <sensor name="velodyne_sensor" type="gpu_ray">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <visualize>false</visualize>
+      <pose>0 0 0 0 0 0</pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>256</samples>
+            <resolution>0.5</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>16</samples>
+            <resolution>0.5</resolution>
+            <min_angle>-0.9</min_angle> <!-- -15 deg -->
+            <max_angle>0.9</max_angle>  <!-- +15 deg -->
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+
+      <plugin name="velodyne_plugin" filename="libgazebo_ros_gpu_laser.so">
+        <ros>
+          <namespace>/velodyne</namespace>
+          <remapping>~/points:=points</remapping>
+        </ros>
+        <output_type>sensor_msgs/PointCloud2</output_type>
+        <frame_name>velodyne_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

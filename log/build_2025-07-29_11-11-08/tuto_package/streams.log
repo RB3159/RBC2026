@@ -1,0 +1,57 @@
+[0.762s] Invoking command in '/home/a/RBC2026/src/tuto_package': PYTHONPATH=/home/a/RBC2026/build/tuto_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tuto_package build --build-base /home/a/RBC2026/build/tuto_package/build install --record /home/a/RBC2026/build/tuto_package/install.log --single-version-externally-managed install_data
+[0.898s] /home/a/.local/lib/python3.8/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[0.898s]   warnings.warn(msg)
+[0.991s] running egg_info
+[1.006s] creating ../../build/tuto_package/tuto_package.egg-info
+[1.006s] writing ../../build/tuto_package/tuto_package.egg-info/PKG-INFO
+[1.006s] writing dependency_links to ../../build/tuto_package/tuto_package.egg-info/dependency_links.txt
+[1.006s] writing entry points to ../../build/tuto_package/tuto_package.egg-info/entry_points.txt
+[1.007s] writing requirements to ../../build/tuto_package/tuto_package.egg-info/requires.txt
+[1.007s] writing top-level names to ../../build/tuto_package/tuto_package.egg-info/top_level.txt
+[1.099s] writing manifest file '../../build/tuto_package/tuto_package.egg-info/SOURCES.txt'
+[1.127s] reading manifest file '../../build/tuto_package/tuto_package.egg-info/SOURCES.txt'
+[1.128s] writing manifest file '../../build/tuto_package/tuto_package.egg-info/SOURCES.txt'
+[1.128s] running build
+[1.128s] running build_py
+[1.128s] creating /home/a/RBC2026/build/tuto_package/build/lib/tuto_package
+[1.128s] copying tuto_package/odom_tf_broadcaster.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package
+[1.129s] copying tuto_package/lidar_projection_node.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package
+[1.129s] copying tuto_package/detector_node.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package
+[1.129s] copying tuto_package/__init__.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package
+[1.129s] copying tuto_package/data_logger.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package
+[1.129s] running install
+[1.134s] running install_lib
+[1.150s] creating /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package
+[1.151s] copying /home/a/RBC2026/build/tuto_package/build/lib/tuto_package/odom_tf_broadcaster.py -> /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package
+[1.151s] copying /home/a/RBC2026/build/tuto_package/build/lib/tuto_package/lidar_projection_node.py -> /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package
+[1.151s] copying /home/a/RBC2026/build/tuto_package/build/lib/tuto_package/detector_node.py -> /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package
+[1.151s] copying /home/a/RBC2026/build/tuto_package/build/lib/tuto_package/__init__.py -> /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package
+[1.151s] copying /home/a/RBC2026/build/tuto_package/build/lib/tuto_package/data_logger.py -> /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package
+[1.151s] byte-compiling /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package/odom_tf_broadcaster.py to odom_tf_broadcaster.cpython-38.pyc
+[1.152s] byte-compiling /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package/lidar_projection_node.py to lidar_projection_node.cpython-38.pyc
+[1.153s] byte-compiling /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package/detector_node.py to detector_node.cpython-38.pyc
+[1.154s] byte-compiling /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package/__init__.py to __init__.cpython-38.pyc
+[1.154s] byte-compiling /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package/data_logger.py to data_logger.cpython-38.pyc
+[1.155s] running install_data
+[1.155s] creating /home/a/RBC2026/install/tuto_package/share/ament_index/resource_index/packages
+[1.155s] copying resource/tuto_package -> /home/a/RBC2026/install/tuto_package/share/ament_index/resource_index/packages
+[1.155s] copying package.xml -> /home/a/RBC2026/install/tuto_package/share/tuto_package
+[1.155s] creating /home/a/RBC2026/install/tuto_package/share/tuto_package/launch
+[1.155s] copying launch/tuto.launch.py -> /home/a/RBC2026/install/tuto_package/share/tuto_package/launch
+[1.155s] creating /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds
+[1.155s] copying worlds/calibration_world.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds
+[1.156s] copying worlds/home.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds
+[1.156s] copying worlds/tuto.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds
+[1.156s] copying worlds/soccer.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds
+[1.156s] creating /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf
+[1.157s] copying urdf/tuto_half_soccer.urdf -> /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf
+[1.157s] copying urdf/tuto_half_home.urdf -> /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf
+[1.157s] copying urdf/tuto_robot.urdf -> /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf
+[1.157s] running install_egg_info
+[1.171s] Copying ../../build/tuto_package/tuto_package.egg-info to /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package-0.0.0-py3.8.egg-info
+[1.171s] running install_scripts
+[1.206s] Installing detector_node script to /home/a/RBC2026/install/tuto_package/lib/tuto_package
+[1.206s] Installing lidar_projection_node script to /home/a/RBC2026/install/tuto_package/lib/tuto_package
+[1.207s] Installing odom_tf_broadcaster script to /home/a/RBC2026/install/tuto_package/lib/tuto_package
+[1.207s] writing list of installed files to '/home/a/RBC2026/build/tuto_package/install.log'
+[1.224s] Invoked command in '/home/a/RBC2026/src/tuto_package' returned '0': PYTHONPATH=/home/a/RBC2026/build/tuto_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tuto_package build --build-base /home/a/RBC2026/build/tuto_package/build install --record /home/a/RBC2026/build/tuto_package/install.log --single-version-externally-managed install_data

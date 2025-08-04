@@ -1,0 +1,6 @@
+[console_scripts]
+autonomy_node = tuto_package.autonomy_node:main
+detector_node = tuto_package.detector_node:main
+lidar_projection_node = tuto_package.lidar_projection_node:main
+mpc_node = tuto_package.mpc_node:main
+odom_tf_broadcaster = tuto_package.odom_tf_broadcaster:main

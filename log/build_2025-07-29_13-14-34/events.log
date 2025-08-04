@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.000178] (tuto_package) JobQueued: {'identifier': 'tuto_package', 'dependencies': OrderedDict()}
+[0.000227] (tuto_package) JobStarted: {'identifier': 'tuto_package'}
+[0.099296] (-) TimerEvent: {}
+[0.199700] (-) TimerEvent: {}
+[0.300023] (-) TimerEvent: {}
+[0.400285] (-) TimerEvent: {}
+[0.500501] (-) TimerEvent: {}
+[0.550670] (tuto_package) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/tuto_package', 'build', '--build-base', '/home/a/RBC2026/build/tuto_package/build', 'install', '--record', '/home/a/RBC2026/build/tuto_package/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/a/RBC2026/src/tuto_package', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'PYTHONWARNINGS': 'ignore::DeprecationWarning', 'LANGUAGE': 'ko:en', 'USER': 'a', 'LC_TIME': 'ko_KR.UTF-8', 'SSH_AGENT_PID': '2451', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib::/home/a/mujoco/mujoco-3.2.3/bin', 'HOME': '/home/a', 'OLDPWD': '/home/a', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '2230', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '8268', 'IM_CONFIG_PHASE': '1', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'a', 'JOURNAL_STREAM': '8:23517', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'MUJOCO_HOME': '/home/a/mujoco/mujoco-3.2.3', 'USERNAME': 'a', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': ':/home/a/robocup/src/tuto_package/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/a/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/a/mujoco/mujoco-3.2.3/bin', 'SESSION_MANAGER': 'local/a-OMEN-by-HP-Laptop-16-b0xxx:@/tmp/.ICE-unix/2489,unix/a-OMEN-by-HP-Laptop-16-b0xxx:/tmp/.ICE-unix/2489', 'INVOCATION_ID': '4a328c780e4147bb825f52d842cb859b', 'PAPERSIZE': 'a4', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'ko_KR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:e8fd6afc-4dc0-4b1c-b240-448ae369a121', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/a/RBC2026/build/tuto_package', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/a/RBC2026/build/tuto_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[0.600615] (-) TimerEvent: {}
+[0.650489] (tuto_package) StderrLine: {'line': b"/home/a/.local/lib/python3.8/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[0.650728] (tuto_package) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[0.700800] (-) TimerEvent: {}
+[0.715787] (tuto_package) StdoutLine: {'line': b'running egg_info\n'}
+[0.726187] (tuto_package) StdoutLine: {'line': b'writing ../../build/tuto_package/tuto_package.egg-info/PKG-INFO\n'}
+[0.726524] (tuto_package) StdoutLine: {'line': b'writing dependency_links to ../../build/tuto_package/tuto_package.egg-info/dependency_links.txt\n'}
+[0.726996] (tuto_package) StdoutLine: {'line': b'writing entry points to ../../build/tuto_package/tuto_package.egg-info/entry_points.txt\n'}
+[0.727164] (tuto_package) StdoutLine: {'line': b'writing requirements to ../../build/tuto_package/tuto_package.egg-info/requires.txt\n'}
+[0.727308] (tuto_package) StdoutLine: {'line': b'writing top-level names to ../../build/tuto_package/tuto_package.egg-info/top_level.txt\n'}
+[0.800938] (-) TimerEvent: {}
+[0.814382] (tuto_package) StdoutLine: {'line': b"reading manifest file '../../build/tuto_package/tuto_package.egg-info/SOURCES.txt'\n"}
+[0.815383] (tuto_package) StdoutLine: {'line': b"writing manifest file '../../build/tuto_package/tuto_package.egg-info/SOURCES.txt'\n"}
+[0.815588] (tuto_package) StdoutLine: {'line': b'running build\n'}
+[0.815917] (tuto_package) StdoutLine: {'line': b'running build_py\n'}
+[0.816061] (tuto_package) StdoutLine: {'line': b'copying tuto_package/odom_tf_broadcaster.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package\n'}
+[0.816128] (tuto_package) StdoutLine: {'line': b'copying tuto_package/lidar_projection_node.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package\n'}
+[0.816190] (tuto_package) StdoutLine: {'line': b'copying tuto_package/detector_node.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package\n'}
+[0.816249] (tuto_package) StdoutLine: {'line': b'copying tuto_package/__init__.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package\n'}
+[0.816308] (tuto_package) StdoutLine: {'line': b'copying tuto_package/data_logger.py -> /home/a/RBC2026/build/tuto_package/build/lib/tuto_package\n'}
+[0.816366] (tuto_package) StdoutLine: {'line': b'running install\n'}
+[0.819527] (tuto_package) StdoutLine: {'line': b'running install_lib\n'}
+[0.831361] (tuto_package) StdoutLine: {'line': b'running install_data\n'}
+[0.831435] (tuto_package) StdoutLine: {'line': b'copying resource/tuto_package -> /home/a/RBC2026/install/tuto_package/share/ament_index/resource_index/packages\n'}
+[0.831568] (tuto_package) StdoutLine: {'line': b'copying package.xml -> /home/a/RBC2026/install/tuto_package/share/tuto_package\n'}
+[0.831690] (tuto_package) StdoutLine: {'line': b'copying launch/tuto.launch.py -> /home/a/RBC2026/install/tuto_package/share/tuto_package/launch\n'}
+[0.831736] (tuto_package) StdoutLine: {'line': b'copying launch/mapping.launch.py -> /home/a/RBC2026/install/tuto_package/share/tuto_package/launch\n'}
+[0.831881] (tuto_package) StdoutLine: {'line': b'copying worlds/calibration_world.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds\n'}
+[0.832052] (tuto_package) StdoutLine: {'line': b'copying worlds/home.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds\n'}
+[0.832618] (tuto_package) StdoutLine: {'line': b'copying worlds/tuto.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds\n'}
+[0.832684] (tuto_package) StdoutLine: {'line': b'copying worlds/soccer.world -> /home/a/RBC2026/install/tuto_package/share/tuto_package/worlds\n'}
+[0.833158] (tuto_package) StdoutLine: {'line': b'copying urdf/tuto_half_soccer.urdf -> /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf\n'}
+[0.833348] (tuto_package) StdoutLine: {'line': b'copying urdf/tuto_half_home.urdf -> /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf\n'}
+[0.833400] (tuto_package) StdoutLine: {'line': b'copying urdf/tuto_robot.urdf -> /home/a/RBC2026/install/tuto_package/share/tuto_package/urdf\n'}
+[0.833763] (tuto_package) StdoutLine: {'line': b'copying config/nav2_params.yaml -> /home/a/RBC2026/install/tuto_package/share/tuto_package/config\n'}
+[0.833834] (tuto_package) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.845449] (tuto_package) StdoutLine: {'line': b"removing '/home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.845664] (tuto_package) StdoutLine: {'line': b'Copying ../../build/tuto_package/tuto_package.egg-info to /home/a/RBC2026/install/tuto_package/lib/python3.8/site-packages/tuto_package-0.0.0-py3.8.egg-info\n'}
+[0.846057] (tuto_package) StdoutLine: {'line': b'running install_scripts\n'}
+[0.875245] (tuto_package) StdoutLine: {'line': b'Installing autonomy_node script to /home/a/RBC2026/install/tuto_package/lib/tuto_package\n'}
+[0.875881] (tuto_package) StdoutLine: {'line': b'Installing detector_node script to /home/a/RBC2026/install/tuto_package/lib/tuto_package\n'}
+[0.876115] (tuto_package) StdoutLine: {'line': b'Installing lidar_projection_node script to /home/a/RBC2026/install/tuto_package/lib/tuto_package\n'}
+[0.876267] (tuto_package) StdoutLine: {'line': b'Installing mpc_node script to /home/a/RBC2026/install/tuto_package/lib/tuto_package\n'}
+[0.876423] (tuto_package) StdoutLine: {'line': b'Installing odom_tf_broadcaster script to /home/a/RBC2026/install/tuto_package/lib/tuto_package\n'}
+[0.876529] (tuto_package) StdoutLine: {'line': b"writing list of installed files to '/home/a/RBC2026/build/tuto_package/install.log'\n"}
+[0.889588] (tuto_package) CommandEnded: {'returncode': 0}
+[0.898565] (tuto_package) JobEnded: {'identifier': 'tuto_package', 'rc': 0}
+[0.898932] (-) EventReactorShutdown: {}
